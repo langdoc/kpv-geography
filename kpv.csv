@@ -1,4 +1,4 @@
-village,population_2010,latitude,longitude,type,adm_center,district,region,language,dialect
+settlement,population_2010,latitude,longitude,type,adm_center,district,region,language,dialect
 Абезь,478,61.7531069,66.5203805,посёлок,NA,Городской округ Инта,Республика Коми,Komi-Zyrian,NA
 Адзьва,0,66.5544472,59.4226443,деревня,NA,Городской округ Инта,Республика Коми,Komi-Zyrian,Iźva
 Адзьвавом,98,66.5952006,59.2955697,село,NA,Городской округ Инта,Республика Коми,Komi-Zyrian,Iźva
