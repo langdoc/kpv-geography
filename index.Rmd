@@ -1,0 +1,30 @@
+---
+title: "Database of Komi settlements"
+author: "Niko Partanen / IKDP-2 project"
+date: "5/30/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages(library(tidyverse))
+library(lingtypology)
+```
+
+The file [kpv.csv](https://github.com/langdoc/kpv-geography/blob/master/kpv.csv) aims to contain a complete list of settlements where Komi-Zyrian is spoken. The larger goal is to include also settlements that do not exist any longer, with historical information about their foundation and disappearance.
+
+The visualizations below are made with [George Moroz](https://github.com/agricolamz)'s [lingtypology](https://github.com/ropensci/lingtypology) R package.
+
+```{r, echo=FALSE}
+kpv <- read_csv("https://raw.githubusercontent.com/langdoc/kpv-geography/master/kpv.csv", col_types = "ciddcccccc")
+
+map.feature(languages = kpv$language,
+            features = kpv$dialect,
+            label = kpv$settlement,
+            latitude = kpv$latitude,
+            longitude = kpv$longitude)
+```
+
+In principle it would be possible to add any information into pop-up windows. Similarly, the map could be wrapped into an application that would allow filtering it by any variables. This could be, for example, existence of recordings, number of speakers recorded, existencee of transcriptions etc.
+
+This work has been funded by [Kone Foundation](https://koneensaatio.fi/), and connects to the research project [IKDP-2](https://langdoc.github.io/IKDP-2/) led by Rogier Blokland, Michael Rießler and Niko Partanen.
